@@ -4,6 +4,9 @@ import socketIO from 'socket.io';
 import http from 'http';
 
 export default class Server {
+
+    private static _instance: Server;
+
     public app: express.Application;
     public port: number;
 
@@ -11,7 +14,7 @@ export default class Server {
     public io: socketIO.Server;
     private httpServer: http.Server;
 
-    constructor() {
+    private constructor() {
         this.app = express();
         this.port = SERVER_PORT;
         this.httpServer = new http.Server(this.app);
@@ -20,6 +23,10 @@ export default class Server {
 
     }
 
+
+    public static get instance() {
+        return this._instance || (this._instance = new this());
+    };
 
     private escucharSockets() {
         console.log('Escuchando concexiones--sockets');
