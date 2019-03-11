@@ -1,6 +1,6 @@
 import {Router, Request, Response} from "express";
 
-export  const router = Router();
+export const router = Router();
 
 
 router.get('/mensajes', (req: Request, resp: Response) => {
@@ -11,10 +11,27 @@ router.get('/mensajes', (req: Request, resp: Response) => {
 })
 
 
-
 router.post('/mensajes', (req: Request, resp: Response) => {
+    const cuerpo = req.body.cuerpo;
+    const de = req.body.de;
+
     resp.json({
         ok: true,
-        mensaje: 'POST-LISTO'
+        cuerpo: cuerpo,
+        de,
+    });
+})
+
+
+router.post('/mensajes/:id', (req: Request, resp: Response) => {
+    const cuerpo = req.body.cuerpo;
+    const de = req.body.de;
+    const id = req.params.id;
+
+    resp.json({
+        ok: true,
+        cuerpo: cuerpo,
+        id: id,
+        de,
     });
 })
