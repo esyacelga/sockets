@@ -1,0 +1,19 @@
+{
+  "name": "socket-server",
+  "version": "1.0.0",
+  "description": "Creacion de servidor de sockets para proyectos GENERICOS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/esyacelga/sockets.git"
+  },
+  "author": "santiago.yacelga",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/esyacelga/sockets/issues"
+  },
+  "homepage": "https://github.com/esyacelga/sockets#readme"
+}
